@@ -26,16 +26,17 @@
 		<h3>Students Directory</h3>
 		<hr>
 
-		
+
 
 		<table class="table table-bordered table-striped">
 			<thead class="thead-dark">
 				<tr>
-					<th>Student Id</th>
-					<th>Name</th>
+					<th>Student ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
 					<th>Course</th>
 					<th>Country</th>
-					
+
 				</tr>
 			</thead>
 
@@ -43,20 +44,21 @@
 				<c:forEach items="${Students}" var="tempStudent">
 					<tr>
 						<td><c:out value="${tempStudent.id}" /></td>
-						<td><c:out value="${tempStudent.firstName}" /> <c:out
-								value="${tempStudent.lastName}" /></td>
+						<td><c:out value="${tempStudent.firstName}" /></td>
+						<td><c:out value="${tempStudent.lastName}" /></td>
 						<td><c:out value="${tempStudent.course}" /></td>
 						<td><c:out value="${tempStudent.country}" /></td>
-						
+
 					</tr>
 				</c:forEach>
 
 			</tbody>
 		</table>
-		
+
 		<hr>
-		<a href="/CollegeFest/student/list">Back to Students List</a>
-		
+		<a href="/CollegeFestApplication/student/list">Back to Students
+			List</a>
+
 		<script type="text/javascript" nonce="">
 			// <![CDATA[
 			document.body.onload = function() {

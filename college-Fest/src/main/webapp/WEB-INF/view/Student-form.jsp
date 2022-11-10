@@ -28,7 +28,7 @@
 
 		<p class="h4 mb-4">Student</p>
 
-		<form action="/CollegeFest/student/save" method="POST">
+		<form action="/CollegeFestApplication/student/save" method="POST">
 
 			<!-- Add hidden form field to handle update -->
 			<input type="hidden" name="id" value="${Student.id}" />
@@ -52,7 +52,7 @@
 
 			<div class="form-inline">
 
-				<input type="text" name="department" value="${Student.course}"
+				<input type="text" name="course" value="${Student.course}"
 					class="form-control mb-4 col-4" placeholder="course">
 
 
@@ -72,7 +72,8 @@
 		</form>
 
 		<hr>
-		<a href="/CollegeFest/student/list">Back to Students List</a>
+		<a href="/CollegeFestApplication/student/list">Back to Students
+			List</a>
 
 	</div>
 </body>

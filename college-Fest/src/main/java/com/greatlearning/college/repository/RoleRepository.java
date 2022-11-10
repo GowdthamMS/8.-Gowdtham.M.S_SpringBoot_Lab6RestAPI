@@ -1,4 +1,5 @@
 package com.greatlearning.college.repository;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.greatlearning.college.entity.Role;

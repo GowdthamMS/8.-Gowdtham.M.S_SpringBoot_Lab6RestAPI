@@ -46,7 +46,7 @@ public class StudentController {
 	}
 
 	@RequestMapping("/showFormForUpdate")
-	public String showFormForUpdate(@RequestParam("firstName") int theId, Model theModel) {
+	public String showFormForUpdate(@RequestParam("studentId") int theId, Model theModel) {
 
 		// get the Student from the service
 		Student theStudent = studentService.findById(theId);
@@ -60,7 +60,7 @@ public class StudentController {
 
 	@PostMapping("/save")
 	public String saveStudent(@RequestParam("id") int id, @RequestParam("firstName") String firstName,
-			@RequestParam("lastName") String lastName, @RequestParam("department") String department,
+			@RequestParam("lastName") String lastName, @RequestParam("course") String course,
 			@RequestParam("country") String country) {
 
 		System.out.println(id);
@@ -69,10 +69,10 @@ public class StudentController {
 			theStudent = studentService.findById(id);
 			theStudent.setFirstName(firstName);
 			theStudent.setLastName(lastName);
-			theStudent.setDepartment(department);
+			theStudent.setDepartment(course);
 			theStudent.setCountry(country);
 		} else
-			theStudent = new Student(firstName, lastName, department, country);
+			theStudent = new Student(firstName, lastName, course, country);
 		// save the Student
 		studentService.save(theStudent);
 
@@ -82,7 +82,7 @@ public class StudentController {
 	}
 
 	@RequestMapping("/delete")
-	public String delete(@RequestParam("firstName") int theId) {
+	public String delete(@RequestParam("studentId") int theId) {
 
 		// delete the Student
 		studentService.deleteById(theId);
@@ -91,7 +91,7 @@ public class StudentController {
 		return "redirect:/student/list";
 
 	}
-	
+
 	@RequestMapping("/print")
 	public String print(Model theModel) {
 

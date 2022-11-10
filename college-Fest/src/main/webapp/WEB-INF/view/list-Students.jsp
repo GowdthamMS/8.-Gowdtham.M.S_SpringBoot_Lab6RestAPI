@@ -28,10 +28,11 @@
 
 		<!-- Add a search form -->
 
-		<form action="/CollegeFest/student/search" class="form-inline">
+		<form action="/CollegeFestApplication/student/search"
+			class="form-inline">
 
 			<!-- Add a button -->
-			<a href="/CollegeFest/student/showFormForAdd"
+			<a href="/CollegeFestApplication/student/showFormForAdd"
 				class="btn btn-primary btn-sm mb-3"> Add Student </a>
 
 
@@ -42,11 +43,13 @@
 		<table class="table table-bordered table-striped">
 			<thead class="thead-dark">
 				<tr>
-					<th>Student Id</th>
-					<th>Name</th>
+					<th>Student ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
 					<th>Course</th>
 					<th>Country</th>
 					<th>Action</th>
+
 
 				</tr>
 			</thead>
@@ -55,22 +58,19 @@
 				<c:forEach items="${Students}" var="tempStudent">
 					<tr>
 						<td><c:out value="${tempStudent.id}" /></td>
-						<td><c:out value="${tempStudent.firstName}" /> <c:out
-								value="${tempStudent.lastName}" /></td>
+						<td><c:out value="${tempStudent.firstName}" /></td>
+						<td><c:out value="${tempStudent.lastName}" /></td>
 						<td><c:out value="${tempStudent.course}" /></td>
 						<td><c:out value="${tempStudent.country}" /></td>
 						<td>
 							<!-- Add "update" button/link --> <a
-							href="/CollegeFest/student/showFormForUpdate?studentId=${tempStudent.id}"
+							href="/CollegeFestApplication/student/showFormForUpdate?studentId=${tempStudent.id}"
 							class="btn btn-info btn-sm"> Update </a> <!-- Add "delete" button/link -->
 							<a
-							href="/CollegeFest/student/delete?studentId=${tempStudent.id}"
+							href="/CollegeFestApplication/student/delete?studentId=${tempStudent.id}"
 							class="btn btn-danger btn-sm"
 							onclick="if (!(confirm('Are you sure you want to delete this Student?'))) return false">
 								Delete </a>
-
-						</td>
-
 					</tr>
 				</c:forEach>
 
@@ -80,10 +80,10 @@
 
 		<!-- Add a Print form -->
 
-		
-			<!-- Add a button -->
-			<a href="/CollegeFest/student/print"
-				class="btn btn-success btn-sm mb-3"> Print </a>
+
+		<!-- Add a button -->
+		<a href="/CollegeFestApplication/student/print"
+			class="btn btn-success btn-sm mb-3"> Print </a>
 
 
 	</div>

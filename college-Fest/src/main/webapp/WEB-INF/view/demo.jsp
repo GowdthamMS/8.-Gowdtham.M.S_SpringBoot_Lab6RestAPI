@@ -6,7 +6,9 @@
 <meta charset="ISO-8859-1">
 <title>College Fest Registration</title>
 <style>
-a{ font-size: 1.3em}
+a {
+	font-size: 1.3em
+}
 </style>
 
 </head>
